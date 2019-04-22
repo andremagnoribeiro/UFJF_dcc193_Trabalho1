@@ -15,7 +15,7 @@
             <div>
             <li value="${sede.id}">Nome Fantasia: ${sede.nomeFantasia} </li>
             <a href="sedeList.html">Editar</a>
-            <a href="sedeList.html">Excluir</a>
+            <a href="sedeList.html?idsede=${sede.id}">Excluir</a>
             </div>
         </c:forEach>
     </ul>

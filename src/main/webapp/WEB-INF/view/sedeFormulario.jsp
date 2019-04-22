@@ -3,10 +3,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>EXEM02: Formulario</title>
+    <title>Adicionar nova Sede</title>
 </head>
 <body>
-    <h1>EXEM02: Formulario</h1>
+    <h1>Adicionar nova Sede</h1>
     <form action="sedeNova.html" method="post">
         <label>Nome Fantasia: <input type="text" name="nomeFantasia" > </label><br/>
         <label>Estado da Federação: <input type="text" name="estadoDaFederacao"> </label><br/>
