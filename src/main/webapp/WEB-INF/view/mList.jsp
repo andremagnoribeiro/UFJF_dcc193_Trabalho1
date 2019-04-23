@@ -5,17 +5,18 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Lista de Atividades</title>
+    <title>Lista de Membros</title>
 </head>
 
 <body>
-    <h1>Lista de Atividades</h1>
-    <a href="">Home</a><\br>
-    <a href="aForm.html">Criar nova Atividade</a>
+    <h1>Lista de Membros
+    </h1>
+    <a href="">Home</a></br>
+    <a href="mForm.html">Criar novo Membro</a>
     <ol>
-        <c:forEach var="atividade" items="${atividades}">
+        <c:forEach var="membro" items="${membros}">
             <div>
-            <li value="${atividade.id}">Nome Fantasia: ${atividade.titulo} </li>
+            <li value="${membro.id}">Nome: ${membro.nome} </li>
             <a href="aList.html">Editar</a>
             <a href="aExcluir.html">Excluir</a>
             </div>

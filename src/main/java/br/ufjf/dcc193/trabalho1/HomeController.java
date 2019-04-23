@@ -17,7 +17,10 @@ import java.util.List;
 public class HomeController {
     @Autowired
     SedeRepository repSede;
+    @Autowired
     AtividadesRepository repAtividades;
+    @Autowired
+    MembroRepository repMembro;
 
     @RequestMapping("index.html")
     ModelAndView home(Sede s){
@@ -30,6 +33,12 @@ public class HomeController {
     @RequestMapping("form.html")
     String form(){
         return "sedeFormulario";
+    }
+
+
+    @RequestMapping("")
+    String home1(){
+        return "home";
     }
 
     @RequestMapping("sedeList.html")
@@ -74,6 +83,11 @@ public class HomeController {
         return "aFormulario";
     }
 
+    @RequestMapping("mForm.html")
+    String mForm(){
+        return "mForm";
+    }
+
 
     @RequestMapping("aList.html")
     ModelAndView aList() {
@@ -93,6 +107,25 @@ public class HomeController {
         return mv;
     }
 
+
+    @RequestMapping("mNovo.html")
+    ModelAndView mNovo(Membro m){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("mNovo");
+        repMembro.save(m);
+        mv.addObject("membro",m);
+        return mv;
+    }
+
+    @RequestMapping("mList.html")
+    ModelAndView mList() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("mList");
+        List<Membro> mems = repMembro.findAll();
+        mv.addObject("membros", mems);
+        return mv;
+    }
+
     @RequestMapping("aEditar.html")//como passa o parametro da sede do jsp para a home controller
     ModelAndView aEditar(Atividades a){
         ModelAndView mv = new ModelAndView();
@@ -107,6 +140,8 @@ public class HomeController {
         repAtividades.deleteById(a.getId());
         return "aList";
     }
+
+    
 
     
 }

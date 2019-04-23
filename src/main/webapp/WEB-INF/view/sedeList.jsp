@@ -10,6 +10,8 @@
 
 <body>
     <h1>EXM01: Lista de Sedes</h1>
+    <a href="">Home</a></br>
+    <a href="SedeForm.html">Criar nova Sede</a>
     <ol>
         <c:forEach var="sede" items="${sed}">
             <div>
