@@ -5,19 +5,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>EXM01: Lista de Sedes</title>
+    <title>Listagem do somatorio das atividades de cada Sede</title>
 </head>
 
 <body>
-    <h1>EXM01: Lista de Sedes</h1>
+    <h1>Listagem do somatorio das atividades de cada Sede</h1>
     <a href="/">Home</a></br>
-    <a href="sedeForm.html">Criar nova Sede</a>
     <ol>
         <c:forEach var="sede" items="${sedes}">
             <div>
-            <li value="${sede.id}">Nome Fantasia: ${sede.nomeFantasia} </li>
-            <a href="sedeList.html">Editar</a>
-            <a href="sedeList.html?idsede=${sede.id}">Excluir</a>
+            <li value="${sede.id}">Nome Fantasia: ${sede.nomeFantasia} Somatorio Das Atividades: ${somatorio} </li>
             </div>
         </c:forEach>
     </ul>

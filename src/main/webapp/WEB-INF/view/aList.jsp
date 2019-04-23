@@ -10,7 +10,7 @@
 
 <body>
     <h1>Lista de Atividades</h1>
-    <a href="">Home</a><\br>
+    <a href="/">Home</a></br>
     <a href="aForm.html">Criar nova Atividade</a>
     <ol>
         <c:forEach var="atividade" items="${atividades}">

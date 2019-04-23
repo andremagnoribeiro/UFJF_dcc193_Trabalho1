@@ -11,7 +11,7 @@
 <body>
     <h1>Lista de Membros
     </h1>
-    <a href="">Home</a></br>
+    <a href="/">Home</a></br>
     <a href="mForm.html">Criar novo Membro</a>
     <ol>
         <c:forEach var="membro" items="${membros}">

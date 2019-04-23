@@ -30,7 +30,7 @@ public class HomeController {
         return mv;
     }
 
-    @RequestMapping("form.html")
+    @RequestMapping("sedeForm.html")
     String form(){
         return "sedeFormulario";
     }
@@ -45,8 +45,8 @@ public class HomeController {
     ModelAndView sedes() {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("sedeList");
-        List<Sede> sedes = repSede.findAll();
-        mv.addObject("sed", sedes);
+        List<Sede> sed = repSede.findAll();
+        mv.addObject("sedes", sed);
         return mv;
     }
 
@@ -73,10 +73,6 @@ public class HomeController {
         repSede.deleteById(s.getId());
         return "sedeList";
     }
-
-
-
-
 
     @RequestMapping("aForm.html")
     String aForm(){
@@ -140,6 +136,17 @@ public class HomeController {
         repAtividades.deleteById(a.getId());
         return "aList";
     }
+
+    @RequestMapping("listagemSomatorio.html")//como passa o parametro da sede do jsp para a home controller
+    ModelAndView listagemSomatorio(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("somaAtividades");
+        List<Sede> sed = repSede.findAll();
+        mv.addObject("sedes", sed);
+        return mv;
+    }
+
+
 
     
 

@@ -13,6 +13,7 @@
     <a href="sedeList.html">Cadastro de Sede</a></br>
     <a href="mList.html">Cadastro de Membro</a></br>
     <a href="aList.html">Cadastro de Atividade</a>
+    <a href="listagemSomatorio.html">Cadastro de Atividade</a>
 </body>
 
 </html>

@@ -1,10 +1,14 @@
 package br.ufjf.dcc193.trabalho1;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Sede
@@ -21,8 +25,16 @@ public class Sede {
     private String bairro;
     private String telefone;
     private String email;
-
     
+    private ArrayList<Membro> membros;
+    private ArrayList<Atividades> atividades;
+    
+    /*
+    @Autowired
+    AtividadesRepository repAtividades;
+    @Autowired
+    MembroRepository repMembro;
+    */
     public Sede(){
 
     }
@@ -36,6 +48,49 @@ public class Sede {
     this.email= email;
 
     }
+
+
+   /*
+    public AtividadesRepository getRepAtividades() {
+        return repAtividades;
+    }
+  
+    public void setRepAtividades(AtividadesRepository repAtividades) {
+        this.repAtividades = repAtividades;
+    }
+   
+    public MembroRepository getRepMembro() {
+        return repMembro;
+    }
+
+    public void setRepMembro(MembroRepository repMembro) {
+        this.repMembro = repMembro;
+    }
+
+*/
+
+
+
+
+
+    public void setAtividades(ArrayList<Atividades> atividades) {
+        this.atividades = atividades;
+    }
+    public void setMembros(ArrayList<Membro> membros) {
+        this.membros = membros;
+    }
+
+    public ArrayList<Atividades> getAtividades() {
+        return atividades;
+    }
+
+
+    public ArrayList<Membro> getMembros() {
+        return membros;
+    }
+
+
+
 
     @Override
     public String toString() {
