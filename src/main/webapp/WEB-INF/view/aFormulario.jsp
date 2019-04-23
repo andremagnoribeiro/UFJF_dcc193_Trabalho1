@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>EXEM02: Formulario</title>
+    <title>Adiconar Atividade</title>
 </head>
 <body>
     <h1>Adicionar uma nova Atividade
