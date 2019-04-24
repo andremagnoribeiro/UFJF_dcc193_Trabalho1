@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>Formulario</h1>
-    <form action="sedeNova.html" method="post">
+    <form action="sedeSalvar.html" method="post">
+        <input type="hidden" name="idsede" value="${sede.id}"/>
         <label>Nome Fantasia: <input type="text" name="nomeFantasia" value=${sede.nomeFantasia} > </label><br/>
         <label>Estado da Federação: <input type="text" name="estadoDaFederacao" value=${sede.estadoDaFederacao}> </label><br/>
         <label>Cidade: <input type="text" name="cidade" value=${sede.cidade}> </label><br/>

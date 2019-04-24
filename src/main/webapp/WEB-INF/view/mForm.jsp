@@ -9,6 +9,7 @@
     <h1>Adicionar novo Membro
     </h1>
     <form action="mNovo.html" method="post">
+        <label>Sede: <input type="text" name="sedeId"> </label><br/>
         <label>Nome: <input type="text" name="nome" > </label><br/>
         <label>Função: <input type="text" name="funcao"> </label><br/>
         <label>Email: <input type="text" name="email"> </label><br/>

@@ -14,6 +14,7 @@ public class Membro {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    private Long sedeId;
     private String nome;
     private String funcao;
     private String email;
@@ -113,6 +114,20 @@ public class Membro {
      */
     public String getNome() {
         return nome;
+    }
+
+    /**
+     * @return the sedeId
+     */
+    public Long getSedeId() {
+        return sedeId;
+    }
+
+    /**
+     * @param sedeId the sedeId to set
+     */
+    public void setSedeId(Long sedeId) {
+        this.sedeId = sedeId;
     }
 
     

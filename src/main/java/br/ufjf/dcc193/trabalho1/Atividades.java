@@ -16,12 +16,15 @@ public class Atividades {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    private String sedeId;
     private String titulo;
     private String descricao;
     private String dataInicio;
     private String dataFim;
-    private String horasComputadas;//assistencial, jurídica, financeira e executiva;
-
+    private String horasAssistencial;//assistencial, jurídica, financeira e executiva;
+    private String horasJuridica;//assistencial, jurídica, financeira e executiva;
+    private String horasFinanceira;
+    private String horasExecutiva;
 
 
     public Atividades(){
@@ -32,7 +35,6 @@ public class Atividades {
         this.descricao=descricao;
         this.dataInicio=dataInicio;
         this.dataFim=dataFim;
-        this.horasComputadas=horasComputadas; 
     }
 
 
@@ -63,12 +65,6 @@ public class Atividades {
         this.descricao = descricao;
     }
 
-    /**
-     * @param horasComputadas the horasComputadas to set
-     */
-    public void setHorasComputadas(String horasComputadas) {
-        this.horasComputadas = horasComputadas;
-    }
 
     /**
      * @param id the id to set
@@ -105,13 +101,6 @@ public class Atividades {
     }
 
     /**
-     * @return the horasComputadas
-     */
-    public String getHorasComputadas() {
-        return horasComputadas;
-    }
-
-    /**
      * @return the id
      */
     public Long getId() {
@@ -124,6 +113,77 @@ public class Atividades {
     public String getTitulo() {
         return titulo;
     }
+
+    /**
+     * @param horasAssistencial the horasAssistencial to set
+     */
+    public void setHorasAssistencial(String horasAssistencial) {
+        this.horasAssistencial = horasAssistencial;
+    }
+
+    /**
+     * @param horasExecutiva the horasExecutiva to set
+     */
+    public void setHorasExecutiva(String horasExecutiva) {
+        this.horasExecutiva = horasExecutiva;
+    }
+
+    /**
+     * @param horasFinanceira the horasFinanceira to set
+     */
+    public void setHorasFinanceira(String horasFinanceira) {
+        this.horasFinanceira = horasFinanceira;
+    }
+
+    /**
+     * @param horasJuridica the horasJuridica to set
+     */
+    public void setHorasJuridica(String horasJuridica) {
+        this.horasJuridica = horasJuridica;
+    }
+
+    /**
+     * @return the horasAssistencial
+     */
+    public String getHorasAssistencial() {
+        return horasAssistencial;
+    }
+
+    /**
+     * @return the horasExecutiva
+     */
+    public String getHorasExecutiva() {
+        return horasExecutiva;
+    }
+
+    /**
+     * @return the horasFinanceira
+     */
+    public String getHorasFinanceira() {
+        return horasFinanceira;
+    }
+
+    /**
+     * @return the horasJuridica
+     */
+    public String getHorasJuridica() {
+        return horasJuridica;
+    }
+
+    /**
+     * @return the sedeId
+     */
+    public String getSedeId() {
+        return sedeId;
+    }
+
+    /**
+     * @param sedeId the sedeId to set
+     */
+    public void setSedeId(String sedeId) {
+        this.sedeId = sedeId;
+    }
+    
 
 
 }

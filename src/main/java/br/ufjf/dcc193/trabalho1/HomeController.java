@@ -69,14 +69,22 @@ public class HomeController {
     }
 
     @RequestMapping("sedeExcluir.html")
-    String sedeExcluir(Sede s){
-        repSede.deleteById(s.getId());
-        return "sedeList";
+    ModelAndView sedeExcluir(Long idsede){
+        repSede.deleteById(idsede);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("sedeList");
+        List<Sede> sed = repSede.findAll();
+        mv.addObject("sedes", sed);
+        return mv;
     }
 
     @RequestMapping("aForm.html")
-    String aForm(){
-        return "aFormulario";
+    ModelAndView aForm(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("aFormulario");
+        List<Sede> sed = repSede.findAll();
+        mv.addObject("sedes", sed);
+        return mv;
     }
 
     @RequestMapping("mForm.html")
