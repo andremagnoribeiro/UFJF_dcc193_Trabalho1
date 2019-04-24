@@ -8,7 +8,7 @@
 <body>
     <h1>Editar Sede</h1>
     <form action="sedeSalvar.html" method="post">
-        <input type="hidden" name="sedeId" value="${sede.id}"/>
+        <input type="hidden" name="id" value="${sede.id}"/>
         <label>Nome Fantasia: <input type="text" name="nomeFantasia" value=${sede.nomeFantasia} > </label><br/>
         <label>Estado da Federação: <input type="text" name="estadoDaFederacao" value=${sede.estadoDaFederacao}> </label><br/>
         <label>Cidade: <input type="text" name="cidade" value=${sede.cidade}> </label><br/>

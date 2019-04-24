@@ -8,7 +8,7 @@
 <body>
     <h1>Editar atividade</h1>
     <form action="aSalvar.html" method="post">
-        <input type="hidden" name="membroId" value="${atividade.id}"/>
+        <input type="hidden" name="id" value="${atividade.id}"/>
         <label>Titulo: <input type="text" name="titulo" value="${atividade.titulo}"> </label><br/>
         <label>Descrição: <input type="text" name="descricao" value="${atividade.descricao}"> </label><br/>
         <label>Data de Inicio: <input type="text" name="dataInicio" value="${atividade.dataInicio}"> </label><br/>
