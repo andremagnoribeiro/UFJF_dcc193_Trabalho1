@@ -14,7 +14,8 @@
     <ol>
         <c:forEach var="sede" items="${sedes}">
             <div>
-            <li value="${sede.id}">Nome Fantasia: ${sede.nomeFantasia} Somatorio Das Atividades: ${somatorio} </li>
+            <li value="${sede.id}">Nome Fantasia: ${sede.nomeFantasia} </li>
+            <a href="somatorio2.html?sedeId=${sede.id}">Somatorio</a>
             </div>
         </c:forEach>
     </ul>

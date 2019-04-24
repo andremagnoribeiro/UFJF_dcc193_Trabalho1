@@ -30,11 +30,16 @@ public class Atividades {
     public Atividades(){
         
     }
-    public Atividades(String titulo, String descricao, String dataInicio,String dataFim , String horasComputadas){
+
+    public Atividades(String titulo, String descricao, String dataInicio,String dataFim , String horasAssistencial, String horasJuridica,String horasFinanceira,String horasExecutiva){
         this.titulo=titulo;
         this.descricao=descricao;
         this.dataInicio=dataInicio;
         this.dataFim=dataFim;
+        this.horasAssistencial=horasAssistencial;
+        this.horasJuridica=horasJuridica;
+        this.horasFinanceira=horasFinanceira;
+        this.horasExecutiva=horasExecutiva;
     }
 
 
@@ -183,7 +188,7 @@ public class Atividades {
     public void setSedeId(String sedeId) {
         this.sedeId = sedeId;
     }
-    
+
 
 
 }

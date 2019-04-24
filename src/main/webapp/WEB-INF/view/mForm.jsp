@@ -1,4 +1,5 @@
 <%@page pageEncoding="utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,11 @@
     <h1>Adicionar novo Membro
     </h1>
     <form action="mNovo.html" method="post">
-        <label>Sede: <input type="text" name="sedeId"> </label><br/>
+        <select name="sedeId"> 
+            <c:forEach var="sede" items="${sedes}">  
+                <option value="${sede.id}">${sede.nomeFantasia}</option>  
+            </c:forEach>  
+        </select></br>
         <label>Nome: <input type="text" name="nome" > </label><br/>
         <label>Função: <input type="text" name="funcao"> </label><br/>
         <label>Email: <input type="text" name="email"> </label><br/>

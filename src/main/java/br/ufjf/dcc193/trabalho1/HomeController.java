@@ -38,6 +38,9 @@ public class HomeController {
 
     @RequestMapping("")
     String home1(){
+
+        repSede.save(new Sede("Sede1", "MG", "Vitoria", "Trem", "(32)3234-3434", "sede1@gmail.com"));
+        repSede.save(new Sede("Sede2", "MG", "Minas Gerais", "Trem2", "(32)3333-3434", "sede2@gmail.com"));
         return "home";
     }
 
@@ -54,15 +57,6 @@ public class HomeController {
     ModelAndView novo(Sede s){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("sedeNova");
-        repSede.save(s);
-        mv.addObject("sede",s);
-        return mv;
-    }
-
-    @RequestMapping("sedeEditar.html")//como passa o parametro da sede do jsp para a home controller
-    ModelAndView sedeEditar(Sede s){
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("sedeEditar");
         repSede.save(s);
         mv.addObject("sede",s);
         return mv;
@@ -88,8 +82,12 @@ public class HomeController {
     }
 
     @RequestMapping("mForm.html")
-    String mForm(){
-        return "mForm";
+    ModelAndView mForm(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("mForm");
+        List<Sede> sed = repSede.findAll();
+        mv.addObject("sedes", sed);
+        return mv;
     }
 
 
@@ -130,23 +128,51 @@ public class HomeController {
         return mv;
     }
 
-    @RequestMapping("aEditar.html")//como passa o parametro da sede do jsp para a home controller
-    ModelAndView aEditar(Atividades a){
+    
+
+    @RequestMapping("aExcluir.html")
+    ModelAndView aExcluir(Long atividadeId){
+        repAtividades.deleteById(atividadeId);
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("aEditar");
-        repAtividades.save(a);
-        mv.addObject("sede",a);
+        mv.setViewName("aList");
+        List<Atividades> ativ = repAtividades.findAll();
+        mv.addObject("atividades", ativ);
+        return mv;  
+    }
+
+    @RequestMapping("mExcluir.html")
+    ModelAndView mExcluir(Long membroId){
+        repMembro.deleteById(membroId);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("mList");
+        List<Membro> mems = repMembro.findAll();
+        mv.addObject("membros", mems);
+        return mv;
+      
+    }
+
+    @RequestMapping("somatorio2.html")//como passa o parametro da sede do jsp para a home controller
+    ModelAndView listagemSomatorio(Long sedeId){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("somatorio2");
+        List<Atividades> atis= repAtividades.findAll();
+        int soma=0;
+        for (Atividades a: atis) {
+            if(a.getSedeId().equals(sedeId.toString())){
+                soma=soma+Integer.parseInt(a.getHorasAssistencial())+
+                Integer.parseInt(a.getHorasExecutiva())+
+                Integer.parseInt(a.getHorasFinanceira())+
+                Integer.parseInt(a.getHorasJuridica());
+            }
+        }
+        mv.addObject("sede", repSede.getOne(sedeId));
+        mv.addObject("somatorio", soma);
+
         return mv;
     }
 
-    @RequestMapping("aExcluir.html")
-    String aExcluir(Atividades a){
-        repAtividades.deleteById(a.getId());
-        return "aList";
-    }
-
-    @RequestMapping("listagemSomatorio.html")//como passa o parametro da sede do jsp para a home controller
-    ModelAndView listagemSomatorio(){
+    @RequestMapping("somatorio.html")//como passa o parametro da sede do jsp para a home controller
+    ModelAndView listagemSomatorio2(String sedeId){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("somaAtividades");
         List<Sede> sed = repSede.findAll();
@@ -154,6 +180,57 @@ public class HomeController {
         return mv;
     }
 
+
+    @RequestMapping("aEditar.html")//como passa o parametro da sede do jsp para a home controller
+    ModelAndView aEditar(Long atividadeId){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("aEditar");
+        mv.addObject("atividade",   repAtividades.getOne(atividadeId)   );
+        return mv;
+    }
+
+
+    @RequestMapping("sedeEditar.html")//como passa o parametro da sede do jsp para a home controller
+    ModelAndView sedeEditar(Long sedeId){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("sedeEditar");
+        mv.addObject("sede",   repSede.getOne(sedeId)   );
+        return mv;
+    }
+
+    @RequestMapping("mEditar.html")//como passa o parametro da sede do jsp para a home controller
+    ModelAndView mEditar(Long membroId){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("mEditar");
+        mv.addObject("sede",   repMembro.getOne(membroId)   );
+        return mv;
+    }
+    
+    /*
+    @RequestMapping("sedeSalvar.html")//como passa o parametro da sede do jsp para a home controller
+    ModelAndView sedeSalvar(Sede s){
+        ModelAndView mv = new ModelAndView();
+        repSede.;
+        mv.setViewName("sedeList");
+        return mv;
+    }
+
+    @RequestMapping("aSalvar.html")//como passa o parametro da sede do jsp para a home controller
+    ModelAndView aSalvar(Atividade s){
+        ModelAndView mv = new ModelAndView();
+        repSede.;
+        mv.setViewName("aList");
+        return mv;
+    }
+
+    @RequestMapping("mSalvar.html")//como passa o parametro da sede do jsp para a home controller
+    ModelAndView mSalvar(Membro s){
+        ModelAndView mv = new ModelAndView();
+        repSede.;
+        mv.setViewName("mList");
+        return mv;
+    }
+    */
 
 
     

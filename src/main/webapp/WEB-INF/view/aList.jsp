@@ -16,8 +16,8 @@
         <c:forEach var="atividade" items="${atividades}">
             <div>
             <li value="${atividade.id}">Nome Fantasia: ${atividade.titulo} Sede: ${atividade.sedeId} </li></ol>
-            <a href="aList.html">Editar</a>
-            <a href="aExcluir.html">Excluir</a>
+            <a href="aEditar.html?atividadeId=${atividade.id}">Editar</a>
+            <a href="aExcluir.html?atividadeId=${atividade.id}">Excluir</a>
             </div>
         </c:forEach>
     </ul>
