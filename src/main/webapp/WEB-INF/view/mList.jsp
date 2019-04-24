@@ -17,7 +17,7 @@
         <c:forEach var="membro" items="${membros}">
             <div>
             <li value="${membro.id}">Nome: ${membro.nome} Sede: ${membro.sedeId}</li>
-            <a href="aEditar.html?membroId=${membro.id}">Editar</a>
+            <a href="mEditar.html?membroId=${membro.id}">Editar</a>
             <a href="mExcluir.html?membroId=${membro.id}">Excluir</a>
             </div>
         </c:forEach>

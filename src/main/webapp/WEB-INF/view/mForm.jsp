@@ -10,11 +10,12 @@
     <h1>Adicionar novo Membro
     </h1>
     <form action="mNovo.html" method="post">
+            <label>Sede:
         <select name="sedeId"> 
             <c:forEach var="sede" items="${sedes}">  
                 <option value="${sede.id}">${sede.nomeFantasia}</option>  
             </c:forEach>  
-        </select></br>
+        </select></label><br/>
         <label>Nome: <input type="text" name="nome" > </label><br/>
         <label>Função: <input type="text" name="funcao"> </label><br/>
         <label>Email: <input type="text" name="email"> </label><br/>

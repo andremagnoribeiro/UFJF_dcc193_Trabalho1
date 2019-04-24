@@ -10,11 +10,12 @@
     <h1>Adicionar uma nova Atividade
     </h1>
     <form action="aNovo.html" method="post">
-        <select name="sedeId"> 
-            <c:forEach var="sede" items="${sedes}">  
-                <option value="${sede.id}">${sede.nomeFantasia}</option>  
-            </c:forEach>  
-        </select></br>
+        <label>Sede:
+            <select name="sedeId"> 
+                <c:forEach var="sede" items="${sedes}">  
+                    <option value="${sede.id}">${sede.nomeFantasia}</option>  
+                </c:forEach>  
+        </select></label><br/>
         <label>Titulo: <input type="text" name="titulo" > </label><br/>
         <label>Descrição: <input type="text" name="descricao"> </label><br/>
         <label>Data de Inicio: <input type="text" name="dataInicio"> </label><br/>

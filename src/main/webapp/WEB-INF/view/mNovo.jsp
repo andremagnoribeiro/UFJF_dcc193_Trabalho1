@@ -9,8 +9,8 @@
 
 <body>
     <h1>Novo Membro adicionado com sucesso!</h1>
-    <p>Nome Fantasia: ${membro.nome}</p>
-    <a href="mList.html">Lista de Atividades</a>
+    <p>Nome : ${membro.nome}</p>
+    <a href="mList.html">Lista de Membros</a>
 </body>
 
 </html>
